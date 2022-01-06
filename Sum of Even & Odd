@@ -1,28 +1,27 @@
+package com.Aryan;
+
 import java.util.Scanner;
-public class SumOfEvenAndOdd {
 
-	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		String str = s.next();
-		
-		int even = 0;
-		int odd = 0;
-		
-		int i = 0;
-		while(i<str.length()) {
-			int a = (str.charAt(i));
-			if (a%2==0) {
-				even = even +a;
-			}else {
-				odd = odd+a;
-			}
-			
-		}
-	
-			System.out.println(even+ ' '+odd);
-			i = i+1;
-	}
+public class sumofevenodd {
+    public static void main(String[] args) {
+        Scanner in= new Scanner(System.in);
+        int num = in.nextInt();
+        int sumOfOdd = 0;
+        int sumOfEven = 0;
 
+        while (num != 0) {
+            int temp = num% 10; //on dividing any number by 10 we get the remainder as the last digit and this last digit will
+            //be stored in a temp variable and this temp- variable will be checked if the digit is even or not
+
+            if(temp % 2 == 0){
+                sumOfEven = sumOfEven + temp;
+            }
+            if (temp % 2 != 0){
+                sumOfOdd = sumOfOdd + temp;
+            }
+            num = num/10;
+        }
+        System.out.println(sumOfEven+" "+sumOfOdd);
+    }
 }
-
 
